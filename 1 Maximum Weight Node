@@ -1,0 +1,18 @@
+ public int maxWeightCell(int N, int Edge[]){
+       int wt[] = new int[N];
+       
+       //s1
+       for(int i=0; i<N; i++){
+           if(Edge[i] !=-1)
+           wt[Edge[i]] +=i;
+       }
+       //s2
+       int max_wt= -1; int max_wt_idx=-1;
+       for(int i=0; i<N; i++){
+           if(wt[i] >=max_wt){
+               max_wt= wt[i];
+               max_wt_idx =i;
+           }
+       }
+       return max_wt_idx;
+    }
